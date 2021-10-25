@@ -19,7 +19,7 @@ type = string
 variable "vnet_name" {
     description = "Name of the vnet to create"
     type        = string
-    default     = "acctvnet"
+    default     = "cloud-cb"
   }
   
   variable "resource_group_name" {
@@ -33,6 +33,7 @@ variable "vnet_name" {
     default     = ["10.0.0.0/16"]
   }
   
+ 
   variable "subnet_prefixes" {
     description = "The address prefix to use for the subnet."
     type        = list(string)
@@ -44,7 +45,8 @@ variable "vnet_name" {
     type        = list(string)
     default     = ["subnet1", "subnet2", "subnet3"]
   }
-variable "nsg_ids" {
+
+  variable "nsg_ids" {
   description = "A map of subnet name to Network Security Group IDs"
   type        = map(string)
 
