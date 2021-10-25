@@ -44,3 +44,31 @@ variable "vnet_name" {
     type        = list(string)
     default     = ["subnet1", "subnet2", "subnet3"]
   }
+variable "nsg_ids" {
+  description = "A map of subnet name to Network Security Group IDs"
+  type        = map(string)
+
+  default = {
+  }
+}
+
+variable "route_tables_ids" {
+  description = "A map of subnet name to Route table ids"
+  type        = map(string)
+  default     = {}
+}
+
+variable "tags" {
+  description = "The tags to associate with your network and subnets."
+  type        = map(string)
+
+  default = {
+    ENV = "test"
+  }
+}
+
+variable "vnet_location" {
+  description = "The location of the vnet to create. Defaults to the location of the resource group."
+  type        = string
+  default     = null
+}
