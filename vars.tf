@@ -46,20 +46,7 @@ variable "vnet_name" {
     default     = ["subnet1", "subnet2", "subnet3"]
   }
 
-  variable "nsg_ids" {
-  description = "A map of subnet name to Network Security Group IDs"
-  type        = map(string)
-
-  default = {
-  }
-}
-
-variable "route_tables_ids" {
-  description = "A map of subnet name to Route table ids"
-  type        = map(string)
-  default     = {}
-}
-
+  
 variable "tags" {
   description = "The tags to associate with your network and subnets."
   type        = map(string)
