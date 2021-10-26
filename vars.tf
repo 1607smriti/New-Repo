@@ -37,13 +37,13 @@ variable "vnet_name" {
   variable "subnet_prefixes" {
     description = "The address prefix to use for the subnet."
     type        = list(string)
-    default     = ["10.0.1.0/24"]
+    default     = ["10.0.1.0/24","10.0.2.0/24","10.0.3.0/24"]
   }
   
   variable "subnet_names" {
     description = "A list of public subnets inside the vNet."
     type        = list(string)
-    default     = ["subnet1", "subnet2", "subnet3"]
+    default     = ["web-subnet1", "app-subnet2", "db-subnet3"]
   }
 
   
@@ -53,6 +53,7 @@ variable "tags" {
 
   default = {
     ENV = "test"
+    createdby = "raj"
   }
 }
 
